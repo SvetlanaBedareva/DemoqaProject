@@ -1,0 +1,41 @@
+from selenium.webdriver.common.by import By
+
+
+class StudentRegistrationFormLocators:
+	FIRST_NAME = (By.ID, 'firstName')
+	LAST_NAME = (By.ID, 'lastName')
+	EMAIL = (By.ID, 'userEmail')
+	GENDER_MALE = (By.ID, 'gender-radio-1')
+	GENDER_FEMALE = (By.ID, 'gender-radio-2')
+	GENDER_OTHER = (By.ID, 'gender-radio-3')
+	MOBILE_NUMBER = (By.ID, 'userNumber')
+	DATE_OF_BIRTH = (By.ID, 'dateOfBirthInput')
+	MONTH_FIELD = (By.XPATH, '//*[@id="dateOfBirth"]//*[@class="react-datepicker__month-select"]')
+	MONTH_VALUE = (By.XPATH, '//*[@id="dateOfBirth"]//*[@class="react-datepicker__month-select"]//*[text()="%s"]')
+	YEAR_FIELD = (By.XPATH, '//*[@id="dateOfBirth"]//*[@class="react-datepicker__year-select"]')
+	YEAR_VALUE = (By.CSS_SELECTOR, '#dateOfBirth .react-datepicker__year-select option[value="%s"]')
+	DAY_VALUE = (By.CSS_SELECTOR, '#dateOfBirth .react-datepicker__month .react-datepicker__day--0%s')
+	SUBJECTS_FIELD = (By.ID, 'subjectsInput')
+	HOBBIES_SPORTS = (By.ID, 'hobbies-checkbox-1')
+	HOBBIES_READING = (By.ID, 'hobbies-checkbox-2')
+	HOBBIES_MUSIC = (By.ID, 'hobbies-checkbox-3')
+	UPLOAD_PICTURE = (By.ID, 'uploadPicture')
+	CURRENT_ADDRESS = (By.ID, 'currentAddress')
+	STATE = (By.XPATH, '//*[@id = "state"]//input[@type="text"]')
+	STATE_VALUE = (By.XPATH, '//*[@id = "state"]//*[text()="%s"]')
+	CITY = (By.XPATH, '//*[@id = "city"]//input[@type="text"]')
+	CITY_VALUE = (By.XPATH, '//*[@id = "city"]//*[text()="%s"]')
+	SUBMIT_BTN = (By.ID, 'submit')
+	
+	
+class StudentsDataFromFormLocators:
+	STUDENT_NAME = (By.XPATH, "//*[(text()='Student Name')]/following-sibling::td")
+	STUDENT_EMAIL = (By.XPATH, "//*[(text()='Student Email')]/following-sibling::td")
+	GENDER = (By.XPATH, "//*[(text()='Gender')]/following-sibling::td")
+	MOBILE_NUMBER = (By.XPATH, "//*[(text()='Mobile')]/following-sibling::td")
+	DATE_OF_BIRTH = (By.XPATH, "//*[(text()='Date of Birth')]/following-sibling::td")
+	SUBJECTS_FIELD = (By.XPATH, "//*[(text()='Subjects')]/following-sibling::td")
+	HOBBIES = (By.XPATH, "//*[(text()='Hobbies')]/following-sibling::td")
+	PICTURE = (By.XPATH, "//*[(text()='Picture')]/following-sibling::td")
+	CURRENT_ADDRESS = (By.XPATH, "//*[(text()='Address')]/following-sibling::td")
+	STATE_AND_CITY = (By.XPATH, "//*[(text()='State and City')]/following-sibling::td")
