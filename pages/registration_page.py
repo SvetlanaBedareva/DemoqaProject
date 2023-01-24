@@ -121,7 +121,7 @@ class RegistrationPage(BasePage):
 		student_name = self.browser.find_element(*StudentsDataFromFormLocators.STUDENT_NAME).text
 		student_email = self.browser.find_element(*StudentsDataFromFormLocators.STUDENT_EMAIL).text
 		gender = self.browser.find_element(*StudentsDataFromFormLocators.GENDER).text
-		mobile_number = self.browser.find_element(*StudentsDataFromFormLocators.MOBILE_NUMBER).text
+		mobile_number = int(self.browser.find_element(*StudentsDataFromFormLocators.MOBILE_NUMBER).text)
 		date_of_birth = self.browser.find_element(*StudentsDataFromFormLocators.DATE_OF_BIRTH).text
 		subjects = self.browser.find_element(*StudentsDataFromFormLocators.SUBJECTS_FIELD).text
 		hobbies = self.browser.find_element(*StudentsDataFromFormLocators.HOBBIES).text.split(", ")

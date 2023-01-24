@@ -1,24 +1,26 @@
 import time
 from pages.registration_page import RegistrationPage
 from pages.settings import URL_REGISTRATION_PAGE
+from faker import Faker
+fake = Faker()
 
 
 def test_registration_of_student(browser):
     """ Registration of a new student """
     test_data = {
-        'first_name': 'Ivan',
-        'last_name': 'Ivanov',
-        'email': 'test@gmail.com',
+        'first_name': fake.first_name_male(),
+        'last_name': fake.last_name_male(),
+        'email': fake.email(),
         'gender': 'Male',
-        'mobile_number': '9053333333',
-        'date_of_birth': '20 November,1990',
+        'mobile_number': fake.random_number(digits=10),
+        'date_of_birth': fake.day_of_month() + ' ' + fake.month_name() + ',' + fake.year(),
         'subjects': 'English',
         'hobbies': {
             'Sports': False,
             'Reading': True,
             'Music': True
         },
-        'cur_address': 'Moscow, Kirova 1, 2',
+        'cur_address': fake.street_address(),
         'state_name': 'NCR',
         'city_name': 'Delhi',
         'picture': 'cat.jpg'
